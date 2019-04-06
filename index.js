@@ -25,6 +25,11 @@ loadLineByLine();
 
 const ws = fs.createWriteStream(datafile, {flags:'a'});
 function add(data) {
+
+    if (Object.keys(porque).length > 10000) {
+        return;
+    }
+
     if (!(data in porque)) {
         ws.write(data + "\n");
         porque[data] = ""; 

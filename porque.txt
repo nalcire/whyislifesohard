@@ -22,3 +22,6 @@ perl
 juice for lunch
 no more coffee
 technical excellence
+goddamn javascript is so weird
+rube goldberg machines running in production
+又累又想睡 可是睡不着
