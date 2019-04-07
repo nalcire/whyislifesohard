@@ -13,16 +13,18 @@
 
         <div class="container">
             <div class="row">
-                <input type="text" class="form-control" id="newmisery" placeholder="why is life so hard...">
+		<div class="input-group mb-3">
+		    <div class="input-group-prepend">
+		        <button class="btn btn-primary" type="button" id="btnContribute">contribute</button>
+	            </div>
+		    <form id="form" class="w-75" autocomplete="off">
+                        <input type="text" class="form-control w-100" id="newmisery" placeholder="why is life so hard...">
+		    </form>
+		</div>
             </div>
 
             <div class="row pt-4 justify-content-start">
-                <div class="col-sm">
-                    <button type="button" class="btn btn-primary" id="contribute">contribute...</button>
-                </div>
-
-                <div id="oktoast" class="toast col-sm" role="alert" aria-live="assertive" aria-atomic="true"
-                    data-delay="1000">
+                <div id="oktoast" class="toast col-sm" role="alert" aria-live="assertive" aria-atomic="true" data-delay="1000">
                     <div class="toast-header">
                         <strong class="mr-auto">ok</strong>
                         <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
@@ -66,14 +68,23 @@
 	    loadRandom();
 	    autochange = setInterval(loadRandom, 7000);
         });
-        $('#contribute').on('click', function (event) {
-            if ($('#newmisery').val().length > 1) {
+
+	function add() {
+	    if ($('#newmisery').val().length > 1) {
                 $.post('http://whyislifesohard.today', { "m": $('#newmisery').val() }, function (data) {
                     $('#oktoast').toast('show');
 		    $('#newmisery').val('');
                 });
             }
+	}
+
+        $('#btnContribute').on('click', function (event) {
+	    add();
         });
+	$('#form').submit(function(event) {
+	    event.preventDefault();
+	    add();
+	});
     </script>
 </body>
 
