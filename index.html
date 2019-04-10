@@ -71,9 +71,10 @@
 
 	function add() {
 	    if ($('#newmisery').val().length > 1) {
-                $.post('http://whyislifesohard.today', { "m": $('#newmisery').val() }, function (data) {
+                v = $('#newmisery').val();
+		        $('#newmisery').val('');
+                $.post('http://whyislifesohard.today', { "m": v }, function (data) {
                     $('#oktoast').toast('show');
-		    $('#newmisery').val('');
                 });
             }
 	}

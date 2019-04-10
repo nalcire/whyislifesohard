@@ -31,8 +31,9 @@ function add(data) {
     }
 
     if (!(data in porque)) {
-        ws.write(data + "\n");
-        porque[data] = ""; 
+        ws.write(data);
+        ws.write("\n");
+        porque[data] = "";
     }
 }
 
