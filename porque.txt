@@ -9,14 +9,13 @@ we just move bits around
 so many ceph connections
 so much kafka lag
 alternative minimum tax
-they call themselves "engineers"
 no more free kindle
 talking about doing work instead of doing work
 shady tax accountant
 lunch items that cost $12.01
 early morning stress test
 4 controllers but only 2 chargers
-car wash in another parking lot
+car wash is in another parking lot
 lunch meetings
 perl
 juice for lunch
@@ -25,3 +24,39 @@ technical excellence
 goddamn javascript is so weird
 rube goldberg machines running in production
 又累又想睡 可是睡不着
+why is my toast delay fucked up
+6 months and knife still doesn't work
+sekiro needs a boss rush mode
+talk bullshit without data
+sugar everywhere
+too much patting on the back
+i need to learn math
+h264 encoding does not fully utilize my cpu and gpu
+waking up everyday
+the jagweeds
+dog poop in my yard
+bugs every where
+allergies
+why is there a separate amp-img tag
+typing healtcheck instead of healthcheck
+who reset my slack name
+twilio jacket pockets
+JIRA is a fickel pickle
+there are no minio client errors from gofilterd at all
+calorie intake and getting larger pants
+we should create our own libraries
+my computer is frozen
+MacBook multiple monitors not connecting right
+agile for really reals
+terraform and its statefulness
+playing overwatch with angry kids
+The quoted forms are rarely used in practice, but are required for some legitimate purposes. Hence, they should not be rejected in filtering routines but, should instead be passed to the email system for evaluation by the destination host.
+agile processes
+meetings about meetings
+everything's sore
+too many projects
+hearthstone ate my lunch money
+its not hard !
+my trackpad doesn't work anymore
+do not be a wage slave
+sprint goals
