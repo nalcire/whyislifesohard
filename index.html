@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>why is life so hard</title>
 </head>
 
@@ -13,14 +12,14 @@
 
         <div class="container">
             <div class="row">
-		<div class="input-group mb-3">
-		    <div class="input-group-prepend">
-		        <button class="btn btn-primary" type="button" id="btnContribute">contribute</button>
-	            </div>
-		    <form id="form" class="w-75" autocomplete="off">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-primary" type="button" id="btnContribute">contribute</button>
+                    </div>
+                    <form id="form" class="w-75" autocomplete="off">
                         <input type="text" class="form-control w-100" id="newmisery" placeholder="why is life so hard...">
-		    </form>
-		</div>
+                    </form>
+                </div>
             </div>
 
             <div class="row pt-4 justify-content-start">
@@ -37,7 +36,7 @@
                 </div>
             </div>
 
-	    <hr class="my-4">
+            <hr class="my-4">
 
             <div>
                 <p class="display-4" id="porque">
@@ -46,46 +45,43 @@
 
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
-	function loadRandom() {
-	    $("#porque").load('http://whyislifesohard.today/random');
-	}
+        function loadRandom() {
+            $("#porque").load('http://whyislifesohard.today/random');
+        }
 
         $(document).ready(loadRandom);
 
-	autochange = setInterval(loadRandom, 7000);
+        autochange = setInterval(loadRandom, 7000);
 
-        $('#loadmore').on('click', function (event) {
-	    clearInterval(autochange);
-	    loadRandom();
-	    autochange = setInterval(loadRandom, 7000);
+        $('#loadmore').on('click', function(event) {
+            clearInterval(autochange);
+            loadRandom();
+            autochange = setInterval(loadRandom, 7000);
         });
 
-	function add() {
-	    if ($('#newmisery').val().length > 1) {
+        function add() {
+            if ($('#newmisery').val().length > 1) {
                 v = $('#newmisery').val();
-		        $('#newmisery').val('');
-                $.post('http://whyislifesohard.today', { "m": v }, function (data) {
+                $('#newmisery').val('');
+                $.post('http://whyislifesohard.today', {
+                    "m": v
+                }, function(data) {
                     $('#oktoast').toast('show');
                 });
             }
-	}
+        }
 
-        $('#btnContribute').on('click', function (event) {
-	    add();
+        $('#btnContribute').on('click', function(event) {
+            add();
         });
-	$('#form').submit(function(event) {
-	    event.preventDefault();
-	    add();
-	});
+        $('#form').submit(function(event) {
+            event.preventDefault();
+            add();
+        });
     </script>
 </body>
 

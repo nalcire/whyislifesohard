@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(bodyParser.json());
 
 var porque = {};
@@ -23,7 +25,10 @@ async function loadLineByLine() {
 
 loadLineByLine();
 
-const ws = fs.createWriteStream(datafile, {flags:'a'});
+const ws = fs.createWriteStream(datafile, {
+    flags: 'a'
+});
+
 function add(data) {
 
     if (Object.keys(porque).length > 10000) {
@@ -44,21 +49,21 @@ console.log(page);
 function get(data) {
     if (Object.keys(data).length == 1) {
         k = Object.keys(data)[0];
-	v = data[k];
-	if (k.length > v.length) {
-	    return k;
-	}
-	return v.trim();
+        v = data[k];
+        if (k.length > v.length) {
+            return k;
+        }
+        return v.trim();
     } else {
-	winner = "";
+        winner = "";
         for (var k in data) {
-	    if (k.length > winner.length) {
+            if (k.length > winner.length) {
                 winner = k;
-	    } else {
+            } else {
                 winner = v;
-	    }
-	}
-	return winner.trim();
+            }
+        }
+        return winner.trim();
     }
 }
 
@@ -70,7 +75,7 @@ app.post('/', function(req, res) {
     data = get(req.body);
     if (data.length > 280) {
         res.status(400);
-	res.send("too long");
+        res.send("too long");
     }
 
     add(data);

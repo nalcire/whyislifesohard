@@ -60,3 +60,4 @@ its not hard !
 my trackpad doesn't work anymore
 do not be a wage slave
 sprint goals
+vim should have built in code beautifiers
