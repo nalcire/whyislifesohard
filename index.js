@@ -88,6 +88,19 @@ app.get('/random', function(req, res) {
     res.send(k[k.length * Math.random() << 0]);
 })
 
+app.get('/all', function(req, res) {
+    k = Object.keys(porque);
+    res.send(k)
+})
+
+app.get('/search/:term', function(req, res) {
+    res.send('return array of items containing term');
+})
+
+app.get('/top/:n', function(req, res){
+    res.send('return top n items');
+})
+
 app.listen(3000, function() {
     console.log('life is hard on port 3000')
 })

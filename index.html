@@ -50,7 +50,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
         function loadRandom() {
-            $("#porque").load('http://whyislifesohard.today/random');
+            $("#porque").load('https://whyislifesohard.today/random');
         }
 
         $(document).ready(loadRandom);
@@ -67,7 +67,7 @@
             if ($('#newmisery').val().length > 1) {
                 v = $('#newmisery').val();
                 $('#newmisery').val('');
-                $.post('http://whyislifesohard.today', {
+                $.post('https://whyislifesohard.today', {
                     "m": v
                 }, function(data) {
                     $('#oktoast').toast('show');
