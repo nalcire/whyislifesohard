@@ -1,0 +1,3 @@
+# whyislifesohard
+
+why can't readme write themselves...
