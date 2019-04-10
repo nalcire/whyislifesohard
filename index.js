@@ -30,15 +30,6 @@ const ws = fs.createWriteStream(datafile, {
 });
 
 function add(data) {
-
-    if (Object.keys(porque).length > 10000) {
-        return;
-    }
-    ld = data.toLowerCase();
-    if (ld.includes("<") || ld.includes("&lt;")) {
-        return;
-    }
-
     if (!(data in porque)) {
         ws.write(data);
         ws.write("\n");
@@ -80,6 +71,20 @@ app.post('/', function(req, res) {
     if (data.length > 280) {
         res.status(400);
         res.send("too long");
+        return;
+    }
+
+    if (Object.keys(porque).length > 10000) {
+        res.status(500);
+        res.send("too full");
+        return;
+    }
+
+    ld = data.toLowerCase();
+    if (ld.includes("<") || ld.includes("&lt;")) {
+        res.status(406);
+        res.send("too nasty");
+        return;
     }
 
     add(data);

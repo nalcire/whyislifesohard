@@ -68,4 +68,4 @@ spamming fifa buttons is hard to cancel
 <pre>for i in `seq 1 1000`; do curl -s https://whyislifesohard.today/random >> ~/lifesohard; echo "" >> ~/lifesohard ; done; cat ~/lifesohard | sort | uniq | sort</pre>
 no more tendergreens : (
 jimmyjames is trying to code inject my thing
-no more html injection
+is there really no built-in javascript method to encode html entity references?
