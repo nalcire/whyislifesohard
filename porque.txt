@@ -61,3 +61,11 @@ my trackpad doesn't work anymore
 do not be a wage slave
 sprint goals
 vim should have built in code beautifiers
+i forgot to order lunch ... again
+<a href="http://hackertyper.com/">being hacked</a>
+spamming fifa buttons is hard to cancel
+<img src="http://memecrunch.com/meme/56C4Z/yeah-if-you-could-stop-emailing-me/image.jpg"></img>
+<pre>for i in `seq 1 1000`; do curl -s https://whyislifesohard.today/random >> ~/lifesohard; echo "" >> ~/lifesohard ; done; cat ~/lifesohard | sort | uniq | sort</pre>
+no more tendergreens : (
+jimmyjames is trying to code inject my thing
+no more html injection

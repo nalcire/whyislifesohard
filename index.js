@@ -34,6 +34,10 @@ function add(data) {
     if (Object.keys(porque).length > 10000) {
         return;
     }
+    ld = data.toLowerCase();
+    if (ld.includes("<") || ld.includes("&lt;")) {
+        return;
+    }
 
     if (!(data in porque)) {
         ws.write(data);
@@ -97,7 +101,7 @@ app.get('/search/:term', function(req, res) {
     res.send('return array of items containing term');
 })
 
-app.get('/top/:n', function(req, res){
+app.get('/top/:n', function(req, res) {
     res.send('return top n items');
 })
 
