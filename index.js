@@ -39,7 +39,6 @@ function add(data) {
 
 viewfile = '/home/elan/whyislifesohard/index.html';
 const page = fs.readFileSync(viewfile, 'utf8');
-console.log(page);
 
 function get(data) {
     if (Object.keys(data).length == 1) {

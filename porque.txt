@@ -69,3 +69,23 @@ spamming fifa buttons is hard to cancel
 no more tendergreens : (
 jimmyjames is trying to code inject my thing
 is there really no built-in javascript method to encode html entity references?
+splunk ui eats key strokes
+https://sendgrid.slack.com/archives/CDKSZJ3ML/p1554895319009500
+whyislifesohard.today responded HTTP 406 Not Acceptable "too nasty"
+rss needs a json version
+Mail::CheckUser sucks
+can't stamp my own pr
+sgs behavior is so complicated
+why is kube double escaping my json
+Why do we mimic Toyota manufacturing
+standing on chairs
+memory use in go services
+sam is trying to code inject my thing
+kube gofilterd works better than onprem vm
+anything can be wrong
+they used to be called concurrent and parallel systems
+i would like to know what is going on
+more sgs bugs
+all day meetings!
+when half of your paycheck goes for tax!
+Channels everywhere
