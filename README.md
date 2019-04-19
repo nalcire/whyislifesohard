@@ -1,3 +1,3 @@
-# whyislifesohard
+# [whyislifesohard](https://whyislifesohard.today)
 
 why can't readme write themselves...
