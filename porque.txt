@@ -11,7 +11,7 @@ so much kafka lag
 alternative minimum tax
 no more free kindle
 talking about doing work instead of doing work
-shady tax accountant
+why am i getting a tax refund...
 lunch items that cost $12.01
 early morning stress test
 4 controllers but only 2 chargers
@@ -78,7 +78,7 @@ standing on chairs
 memory use in go services
 sam is trying to code inject my thing
 kube gofilterd works better than onprem vm
-anything can be wrong
+math is always wrong
 they used to be called concurrent and parallel systems
 i would like to know what is going on
 more sgs bugs
@@ -118,5 +118,7 @@ everything on lemonade is over $12
 chef is so slow
 🚹 🚺 🚻 🚽 💩 🤳
 why is it so hard to clear browser cache
-why is life so hard
 asynchronous programming is so unnatural
+richard tried sql injection, but he didn't even do it right!
+why is life so hard
+i wish there is a poop emoji that is not smiling

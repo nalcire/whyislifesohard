@@ -49,7 +49,6 @@
             delay = 900
 
             function garbageCollect() {
-                $('#porques').children().first().remove();
             }
 
             function animateList() {
@@ -60,15 +59,15 @@
                     duration: delay * 0.7,
                     complete: function() {
                         $("#porques").css("top", "");
-                        garbageCollect();
+                        $('#porques').children().first().remove();
                     }
                 });
             }
 
             function appendRandom() {
                 $.get('https://whyislifesohard.today/random', function(data) {
-                        $('#porques').append('<li>' + data + '</li>');
-
+                        $('#porques').append('<li style="display: none">' + data + '</li>');
+                        $('#porques').children().last().fadeIn();
                         windowHeight = $(window).height();
                         pageHeight = document.body.scrollHeight;
                         if (pageHeight > windowHeight * 1.5) {

@@ -39,9 +39,6 @@ function add(data) {
     }
 }
 
-const page = fs.readFileSync('/home/elan/whyislifesohard/index.html', 'utf8');
-const turbo = fs.readFileSync('/home/elan/whyislifesohard/turbo.html', 'utf8');
-
 function get(data) {
     if (Object.keys(data).length == 1) {
         k = Object.keys(data)[0];
@@ -63,10 +60,12 @@ function get(data) {
     }
 }
 
+const page = fs.readFileSync('/home/elan/whyislifesohard/index.html', 'utf8');
 app.get('/', function(req, res) {
     res.send(page);
 })
 
+const turbo = fs.readFileSync('/home/elan/whyislifesohard/turbo.html', 'utf8');
 app.get('/turbo', function(req, res) {
     res.send(turbo);
 })
@@ -102,9 +101,9 @@ app.get('/random', function(req, res) {
     res.send(k[k.length * Math.random() << 0]);
 })
 
-app.get('/recent', function(req, res){
+app.get('/recent', function(req, res) {
     k = Object.keys(porque);
-    res.send(k[k.length-1]);
+    res.send(k[k.length - 1]);
 })
 
 app.get('/all', function(req, res) {
