@@ -62,15 +62,11 @@ do not be a wage slave
 sprint goals
 vim should have built in code beautifiers
 i forgot to order lunch ... again
-<a href="http://hackertyper.com/">being hacked</a>
 spamming fifa buttons is hard to cancel
-<img src="http://memecrunch.com/meme/56C4Z/yeah-if-you-could-stop-emailing-me/image.jpg"></img>
-<pre>for i in `seq 1 1000`; do curl -s https://whyislifesohard.today/random >> ~/lifesohard; echo "" >> ~/lifesohard ; done; cat ~/lifesohard | sort | uniq | sort</pre>
 no more tendergreens : (
 jimmyjames is trying to code inject my thing
 is there really no built-in javascript method to encode html entity references?
 splunk ui eats key strokes
-https://sendgrid.slack.com/archives/CDKSZJ3ML/p1554895319009500
 whyislifesohard.today responded HTTP 406 Not Acceptable "too nasty"
 rss needs a json version
 Mail::CheckUser sucks
@@ -93,15 +89,14 @@ what happened to my append only file, all the suck from friday is gone...
 why is Palpatine not dead
 maybe star wars has always been just shitty kids movies
 none of the knobs have any effect
-fucking knobs, they do nothingg
+fucking knobs, they do nothing
 perl filter unit tests
 helm can't upgrade when kube doesn't have extra quota
 skipped gym
-legacy systems are all bad, but not really.  everything sucks
+legacy systems are all bad, but not really. everything sucks
 I want to join the satanic temple
-i am beaten.  i can't take a third bite of this lamb kidney.
+i am beaten. i can't take a third bite of this lamb kidney.
 walking across campus with no phone or music...what is this the dark ages?
-Let us demand that individuals be judged for their concrete actions, not their fealty to arbitrary social norms and illusory categorizations. Let us reason our solutions with agnosticism in all things, holding fast only to that which is demonstrably true.
 tweedledum wears the same shirt everyday
 lightstep satellites are dying
 postoffice dedupers are dying
