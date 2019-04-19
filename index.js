@@ -114,7 +114,7 @@ app.get('/all', function(req, res) {
     }
 
     res.status(401)
-    res.send("what is the password")
+    res.send("patience grasshopper")
 })
 
 app.get('/search/:term', function(req, res) {

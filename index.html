@@ -34,20 +34,7 @@
                 </div>
             </form>
         </div>
-        <div class="row pt-4 justify-content-start">
-            <div id="oktoast" class="toast col-sm" role="alert" aria-live="assertive" aria-atomic="true" data-delay="1000">
-                <div class="toast-header">
-                    <i class="fas fa-poo mr-2"></i>
-                    <strong class="mr-auto">ok</strong>
-                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="toast-body">
-                    life is a little harder because of you.
-                </div>
-            </div>
-        </div>
+        <div id="toastrow" class="pt-4 justify-content-start"></div>
         <div class="jumbotron bg-transparent">
             <p class="display-2" id="porque" />
             <button type="button" class="btn btn-primary invisible" id="loadmore">more misery...</button>
@@ -79,6 +66,15 @@
             autochange = setInterval(loadRandom, 7000);
         });
 
+        function addToast(r1, r2) {
+            toast = `<div class="toast w-100" role="alert" aria-live="assertive" aria-atomic="true" data-delay="1000"><div class="toast-header"><i class="fas fa-poo mr-2"></i><strong class="mr-auto">${r1}</strong><button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="toast-body">${r2}</div></div>`;
+            $('#toastrow').append(toast);
+            $('.toast').toast('show');
+            $('.toast').on('hidden.bs.toast', function() {
+                $('#toastrow').empty();
+            })
+        }
+
         function add() {
             if ($('#newmisery').val().length > 1) {
                 v = $('#newmisery').val();
@@ -86,7 +82,9 @@
                 $.post('https://whyislifesohard.today', {
                     "m": v
                 }, function(data) {
-                    $('#oktoast').toast('show');
+                    addToast("ok", "life is a little harder because of you")
+                }).fail(function(xhr, status, error) {
+                    addToast("nope", `${xhr.status}: ${error}`);
                 });
             }
         }
