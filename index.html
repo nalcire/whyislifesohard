@@ -49,11 +49,16 @@
             </div>
         </div>
         <div class="jumbotron bg-transparent">
-            <p class="display-4" id="porque" />
+            <p class="display-2" id="porque" />
             <button type="button" class="btn btn-primary invisible" id="loadmore">more misery...</button>
         </div>
     </div>
     <div class="container p-3 fixed-bottom">
+        <div class="alert alert-primary">
+            <h5 class="alert-heading">most recent:</h5>
+            <p id="recent" />
+        </div>
+
         <a href="turbo">turbo</a>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -62,6 +67,7 @@
     <script>
         function loadRandom() {
             $("#porque").load('https://whyislifesohard.today/random');
+            $("#recent").load('https://whyislifesohard.today/recent');
         }
 
         $(document).ready(loadRandom);

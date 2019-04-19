@@ -102,6 +102,11 @@ app.get('/random', function(req, res) {
     res.send(k[k.length * Math.random() << 0]);
 })
 
+app.get('/recent', function(req, res){
+    k = Object.keys(porque);
+    res.send(k[k.length-1]);
+})
+
 app.get('/all', function(req, res) {
     if (req.query.password == "12345") {
         k = Object.keys(porque);

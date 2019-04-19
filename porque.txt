@@ -119,3 +119,4 @@ chef is so slow
 🚹 🚺 🚻 🚽 💩 🤳
 why is it so hard to clear browser cache
 why is life so hard
+asynchronous programming is so unnatural
