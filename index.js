@@ -39,8 +39,8 @@ function add(data) {
     }
 }
 
-viewfile = '/home/elan/whyislifesohard/index.html';
-const page = fs.readFileSync(viewfile, 'utf8');
+const page = fs.readFileSync('/home/elan/whyislifesohard/index.html', 'utf8');
+const turbo = fs.readFileSync('/home/elan/whyislifesohard/turbo.html', 'utf8');
 
 function get(data) {
     if (Object.keys(data).length == 1) {
@@ -65,6 +65,10 @@ function get(data) {
 
 app.get('/', function(req, res) {
     res.send(page);
+})
+
+app.get('/turbo', function(req, res) {
+    res.send(turbo);
 })
 
 app.post('/', function(req, res) {

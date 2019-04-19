@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="https://whyislifesohard.today/favicon.ico" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>why is life so hard [turbo]</title>
+    <style>
+        body {
+            overflow: hidden;
+        }
+
+        ul {
+            list-style: none;
+            position: relative;
+        }
+
+        li {
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #428bca;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container p-3 d-flex">
+        <div>
+            <ul id="porques" class=display-4>
+            </ul>
+        </div>
+    </div>
+    <div class="container p-3 fixed-bottom">
+        <a href="/">normal</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; curl -XPOST https://whyislifesohard.today -d 'why is life so hard'
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        delay = 900
+
+        function garbageCollect() {
+            $('#porques').children().first().remove();
+        }
+
+        function animateList() {
+            height = $('#porques li').first().outerHeight(true);
+            $('#porques').animate({
+                top: -height
+            }, {
+                duration: delay * 0.7,
+                complete: function() {
+                    $("#porques").css("top", "");
+                    garbageCollect();
+                }
+            });
+        }
+
+        function appendRandom() {
+            $.get('https://whyislifesohard.today/random', function(data) {
+                    $('#porques').append('<li>' + data + '</li>');
+
+                    windowHeight = $(window).height();
+                    pageHeight = document.body.scrollHeight;
+                    if (pageHeight > windowHeight * 0.9) {
+                        animateList();
+                    }
+
+                })
+                .always(function() {
+                    setTimeout(appendRandom, delay);
+                });
+        }
+        $(document).ready(appendRandom)
+    </script>
+</body>
+
+</html>
