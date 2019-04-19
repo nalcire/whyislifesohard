@@ -21,6 +21,8 @@ async function loadLineByLine() {
     for await (const line of rl) {
         porque[line] = "";
     }
+
+    convertcsv();
 }
 
 loadLineByLine();
@@ -97,8 +99,13 @@ app.get('/random', function(req, res) {
 })
 
 app.get('/all', function(req, res) {
-    k = Object.keys(porque);
-    res.send(k)
+    if (req.query.password == "12345") {
+        k = Object.keys(porque);
+        res.send(k)
+    }
+
+    res.status(401)
+    res.send("what is the password")
 })
 
 app.get('/search/:term', function(req, res) {
