@@ -21,8 +21,6 @@ async function loadLineByLine() {
     for await (const line of rl) {
         porque[line] = "";
     }
-
-    convertcsv();
 }
 
 loadLineByLine();
@@ -39,27 +37,6 @@ function add(data) {
     }
 }
 
-function get(data) {
-    if (Object.keys(data).length == 1) {
-        k = Object.keys(data)[0];
-        v = data[k];
-        if (k.length > v.length) {
-            return k;
-        }
-        return v.trim();
-    } else {
-        winner = "";
-        for (var k in data) {
-            if (k.length > winner.length) {
-                winner = k;
-            } else {
-                winner = v;
-            }
-        }
-        return winner.trim();
-    }
-}
-
 const page = fs.readFileSync('/home/elan/whyislifesohard/index.html', 'utf8');
 app.get('/', function(req, res) {
     res.send(page);
@@ -70,30 +47,53 @@ app.get('/turbo', function(req, res) {
     res.send(turbo);
 })
 
+captchaSecret = process.env.CAPTCHA_SECRET
+const request = require('request');
 app.post('/', function(req, res) {
-    data = get(req.body);
-    if (data.length > 280) {
+    data = req.body.m.trim();
+    captcha = req.body.t;
+
+    if (data.length > 234) {
         res.status(400);
-        res.send("too long");
+        res.send("too long\n");
         return;
     }
 
     if (Object.keys(porque).length > 10000) {
         res.status(500);
-        res.send("too full");
+        res.send("too full\n");
         return;
     }
 
-    ld = data.toLowerCase();
-    if (ld.includes("<") || ld.includes("&lt;")) {
+    if (data.includes("<")) {
         res.status(406);
-        res.send("too nasty");
+        res.send("too nasty\n");
         return;
     }
 
-    add(data);
-    res.status(200);
-    res.send();
+    request.post({
+            url: "https://www.google.com/recaptcha/api/siteverify",
+            form: {
+                secret: captchaSecret,
+                response: captcha
+            }
+        },
+        function(err, httpResponse, body) {
+            if (!err) {
+                const resp = JSON.parse(body);
+                if (resp.success && resp.score > 0.7) {
+                    add(data);
+                    res.status(200);
+                    res.send();
+                } else {
+                    res.status(418);
+                    res.send("the gods were not happy\n");
+                }
+            } else {
+                res.status(418);
+                res.send("the gods are busy\n")
+            }
+        })
 })
 
 app.get('/random', function(req, res) {
@@ -106,22 +106,24 @@ app.get('/recent', function(req, res) {
     res.send(k[k.length - 1]);
 })
 
+password = process.env.PASSWORD
 app.get('/all', function(req, res) {
-    if (req.query.password == "12345") {
+    if (req.query.password == password) {
         k = Object.keys(porque);
         res.send(k)
+        return
     }
 
     res.status(401)
-    res.send("patience grasshopper")
+    res.send("patience grasshopper\n")
 })
 
 app.get('/search/:term', function(req, res) {
-    res.send('return array of items containing term');
+    res.send('return array of items containing term\n');
 })
 
 app.get('/top/:n', function(req, res) {
-    res.send('return top n items');
+    res.send('return top n items\n');
 })
 
 app.listen(3000, function() {

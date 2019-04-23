@@ -16,23 +16,24 @@
 </head>
 
 <body>
-    <div class="container-fluid p-5">
-        <div>
-            <form id="form" class="w-100" autocomplete="off">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <button class="btn btn-primary" type="button" id="btnContribute">contribute</button>
-                    </div>
-                    <input type="text" class="form-control" id="newmisery" placeholder="why is life so hard...">
-                    <div class="input-group-append">
-                        <span style="color: saddlebrown">
-                            <i class="fas fa-poo fa-2x ml-3"></i>
-                        </span>
-                    </div>
+    <div class="container p-5">
+        <form id="form" class="w-100" autocomplete="off">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <button class="btn btn-primary" type="button" id="btnContribute">contribute</button>
                 </div>
-            </form>
-        </div>
+                <input type="text" class="form-control" id="newmisery" placeholder="why is life so hard...">
+                <div class="input-group-append">
+                    <span style="color: saddlebrown">
+                        <i class="fas fa-poo fa-2x ml-3"></i>
+                    </span>
+                </div>
+            </div>
+        </form>
         <div id="toastrow" class="pt-4 justify-content-start"></div>
+    </div>
+
+    <div class="container-fluid p-5">
         <div class="jumbotron bg-transparent">
             <p class="display-2" id="porque" />
             <button type="button" class="btn btn-primary invisible" id="loadmore">more misery...</button>
@@ -40,7 +41,7 @@
     </div>
     <div class="container p-3 fixed-bottom">
         <div class="alert alert-primary">
-            <h5 class="alert-heading">most recent:</h5>
+            <h5 class="alert-heading">most recent <i class="fas fa-toilet">&nbsp;</i><i class="fas fa-toilet">&nbsp;</i><i class="fas fa-toilet">&nbsp;</i>:</h5>
             <p id="recent" />
         </div>
 
@@ -49,8 +50,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfRoZ8UAAAAAGQZ-W3tLqGyeHRkmYOlhbDBofY3"></script>
     <script>
         interval = 8000;
+
         function loadRandom() {
             $("#porque").fadeOut().hide().load('https://whyislifesohard.today/random').fadeIn();
             $("#recent").load('https://whyislifesohard.today/recent');
@@ -74,27 +77,39 @@
             })
         }
 
-        function add() {
+        function addAndVerify() {
+            grecaptcha.ready(function() {
+                grecaptcha.execute('6LfRoZ8UAAAAAGQZ-W3tLqGyeHRkmYOlhbDBofY3', {
+                    action: 'homepage'
+                }).then(function(token) {
+                    add(token)
+                });
+            });
+        }
+
+        function add(token) {
             if ($('#newmisery').val().length > 1) {
                 v = $('#newmisery').val();
                 $('#newmisery').val('');
                 $.post('https://whyislifesohard.today', {
-                    "m": v
+                    "m": v,
+                    "t": token,
                 }, function(data) {
-                    addToast("ok", "life is a little harder because of you")
+                    addToast("maybe", "if the gods are happy, life will be a little harder because of you")
                 }).fail(function(xhr, status, error) {
                     addToast("nope", `${xhr.status}: ${error}`);
                 });
+
             }
         }
 
         $('#btnContribute').on('click', function(event) {
-            add();
+            addAndVerify();
         });
 
         $('#form').submit(function(event) {
             event.preventDefault();
-            add();
+            addAndVerify();
         });
     </script>
 </body>
