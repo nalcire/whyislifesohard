@@ -12,6 +12,7 @@
             padding: 20px;
             border-radius: 3px;
         }
+
     </style>
 </head>
 
@@ -42,7 +43,7 @@
     <div class="container p-3 fixed-bottom">
         <div class="alert alert-primary">
             <h5 class="alert-heading">most recent <i class="fas fa-toilet">&nbsp;</i><i class="fas fa-toilet">&nbsp;</i><i class="fas fa-toilet">&nbsp;</i>:</h5>
-            <p id="recent" />
+            <p class="text-justify" id="recent" />
         </div>
 
         <a href="turbo">turbo</a>
@@ -95,7 +96,7 @@
                     "m": v,
                     "t": token,
                 }, function(data) {
-                    addToast("maybe", "if the gods are happy, life will be a little harder because of you")
+                    addToast("ok", "life is a little harder because of you")
                 }).fail(function(xhr, status, error) {
                     addToast("nope", `${xhr.status}: ${error}`);
                 });
