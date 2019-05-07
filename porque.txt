@@ -137,7 +137,6 @@ Its too cold in the office
 whyislifesohard.today needs a jira board
 i need to add reCaptcha
 blast chiller vent above my new seat
-बहन के लौड़े
 Why is so hard to convince parents?
 is it supposed to be at 7 or 8?
 i would like a poop emoji that is not smiling
@@ -150,3 +149,17 @@ too many java developers in this world
 dkim keys
 it's not - dustin G is awesome! thank you dustin! look look dustin! looOOOK!!!!
 people putting their names on everything
+Why is redis deduper always broken on VMs?
+baby shark
+redis
+stupid link indexes
+It is a capital mistake to theorize before one has data. Insensibly one begins to twist facts to suit theories, instead of theories to suit facts.
+bureaucrats
+donald trump funko pop is $100
+sam actually knows whenever people say "sgs" in slack
+why is everything in sendlib? just write things in your own repo!
+Does recaptcha work yet?
+Customers asking for silly features that other ESPs support
+burpies
+ISO-2022-JP is not suitable for Japanese: It does not even contain Katakana characters. I don't know why you would want to use this encoding. Nobody uses it.
+🏴󠁧󠁢󠁥󠁮󠁧󠁿
