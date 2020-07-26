@@ -81,13 +81,14 @@ app.post('/', function(req, res) {
         function(err, httpResponse, body) {
             if (!err) {
                 const resp = JSON.parse(body);
-                if (resp.success && resp.score > 0.7) {
+                if (resp.success && resp.score >= 0.1) {
                     add(data);
                     res.status(200);
                     res.send();
                 } else {
                     res.status(418);
                     res.send("the gods were not happy\n");
+                    console.log(resp);
                 }
             } else {
                 res.status(418);

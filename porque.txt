@@ -163,3 +163,23 @@ Customers asking for silly features that other ESPs support
 burpies
 ISO-2022-JP is not suitable for Japanese: It does not even contain Katakana characters. I don't know why you would want to use this encoding. Nobody uses it.
 🏴󠁧󠁢󠁥󠁮󠁧󠁿
+I am not a teapot
+github can't handle PRs with greater than 1000 files
+commentators that keep saying obvious bullshit with no real insight
+`sudo rm -rf /home/elan`
+`\";
+punctuation is hard
+$self->{tracking}->{log}->{filterdrecv_received} = $self->{item}->{filterd_received}; # yes, filterdrecv calls its time filterd_received
+doesnt work on my machine
+the gap between perception and the truth
+some people are disgusting
+sad all hands
+Perl strings
+t-mobile international pass
+food tours requiring minimal fitness level
+white hats
+dfsdfsdf
+what is this
+coronavirus
+adding manpower to a late software project makes it later
+Fuck the police
