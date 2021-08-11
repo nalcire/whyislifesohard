@@ -127,6 +127,15 @@ app.get('/top/:n', function(req, res) {
     res.send('return top n items\n');
 })
 
+app.get('/echo', function(req, res) {
+    r = '<html><body>';
+    r += '<pre>' + JSON.stringify(req.originalUrl) + '</pre>';
+    r += '<pre>' + JSON.stringify(req.headers, null, 4) + '</pre>';
+    r += '<pre>' + JSON.stringify(req.body, null, 4) + '</pre>';
+    r += '</body></html>';
+    res.send(r);
+})
+
 app.listen(3000, function() {
     console.log('life is hard on port 3000')
 })
